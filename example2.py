@@ -4,12 +4,11 @@ Assigning a function to a Button widget
 Getting and Inserting Entry widgets
 """
 import tkinter as tk 
-from tkinter import *
 
 
 win = tk.Tk()
 
-eoutput = StringVar()
+eoutput = tk.StringVar()
 eoutput.set("Output goes here")
 
 def clickFunction(event):
@@ -40,9 +39,9 @@ def clickFunction(event):
     a_entry.insert(0,answer)
 
 
-l1 = Label(win, text="Enter a number")
-e1 = Entry(win, width=20)
-b1 = Button(win, text="Click to double")
+l1 = tk.Label(win, text="Enter a number")
+e1 = tk.Entry(win, width=20)
+b1 = tk.Button(win, text="Click to double")
 # Once we create the button widget, we can bind an event to it
 # this means that when the specified action is triggered,
 # the corresponding event handler function is executed
@@ -50,8 +49,8 @@ b1 = Button(win, text="Click to double")
 # https://python-course.eu/tkinter/events-and-binds-in-tkinter.php
 b1.bind("<Button>",clickFunction)
 
-a_label = Label(win, text="The entry doubled is:")
-a_entry = Entry(win, width=20, textvariable=eoutput)
+a_label = tk.Label(win, text="The entry doubled is:")
+a_entry = tk.Entry(win, width=20, textvariable=eoutput)
 
 l1.grid(row=1,column=1)
 e1.grid(row=1,column=2)
